@@ -49,6 +49,8 @@ services:
     build: dockerfiles/catapult
     command: bash -c "/bin/bash /userconfig/startServer.sh"
     stop_signal: SIGINT
+    ports:
+      - "7900:7900"
     volumes:
     - ./build/catapult-config/peer-node-1/userconfig/resources/:/userconfig/resources/
     - ./dockerfiles/catapult/userconfig/:/userconfig:rw
@@ -59,14 +61,10 @@ services:
     build: dockerfiles/catapult
     command: bash -c "/bin/bash /userconfig/startServer.sh"
     stop_signal: SIGINT
+    ports:
+      - "7910:7910"
     volumes:
     - ./build/catapult-config/api-node-0/userconfig/resources/:/userconfig/resources/
     - ./dockerfiles/catapult/userconfig/:/userconfig:rw
     - ./data/api-node-0:/data:rw
     - ./bin/bash:/bin-mount
-
-  block-explorer:
-    image: techbureau/catapult-block-explorer
-    command: ["python", "-m", "http.server", "8000"]
-    ports:
-    - "8000:8000"

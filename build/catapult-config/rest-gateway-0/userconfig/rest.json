@@ -20,7 +20,7 @@
 
   "apiNode": {
     "host": "api-node-0",
-    "port": 7900,
+    "port": 7910,
     "publicKey": ""
   },
 

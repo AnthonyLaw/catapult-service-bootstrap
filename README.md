@@ -7,7 +7,7 @@ mainly for user to contribure catapult node on Testnet.
 # Prerequisites
 - docker and docker-compose in server
 
-Endpoint for [create catapult address](http://40.90.163.184:3000) in [NEM2-Cli](https://www.npmjs.com/package/nem2-cli).
+Endpoint for [create catapult address](http://40.90.163.184:3000 ) in [NEM2-Cli](https://www.npmjs.com/package/nem2-cli).
 
 we need 4 address for
 - API node
@@ -47,6 +47,4 @@ roles = Api
 ## rest-gateway-0
 >rest.json
 `clientPrivateKey = // rest account privateKey`
-`apiNode > host // api host ip || api node name`
 `apiNode > publicKey // api account publicKey`
-`websocket.mq.host =  // api host ip || api node name`
