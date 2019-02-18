@@ -138,3 +138,7 @@ Launch docker and run the node.
 `cd catapult-service-bootstrap (or other name if you rename the folder)`
 `docker-compose up`
 
+# Test on node
+
+`curl http://localhost:3000/chain/height`
+
