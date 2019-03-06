@@ -35,7 +35,7 @@ services:
     - db
 
   rest-gateway:
-    image: techbureau/catapult-rest-server:1.0.12
+    image: techbureau/catapult-rest-server:1.0.13
     command: ash -c "npm start resources/rest.json /userconfig/rest.json"
     ports:
     - "3000:3000"
