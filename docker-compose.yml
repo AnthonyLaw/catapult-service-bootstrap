@@ -68,8 +68,8 @@ services:
     - ./dockerfiles/catapult/userconfig/:/userconfig:rw
     - ./data/api-node-0:/data:rw
     - ./bin/bash:/bin-mount
-  block-explorer:
-    image: techbureau/catapult-block-explorer
-    command: ["python", "-m", "http.server", "8000"]
-    ports:
-    - "8000:8000"
+#  block-explorer:
+#    image: techbureau/catapult-block-explorer
+#    command: ["python", "-m", "http.server", "8000"]
+#    ports:
+#    - "8000:8000"
