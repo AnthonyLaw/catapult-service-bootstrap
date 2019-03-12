@@ -18,6 +18,7 @@ For users to contribure catapult node on Testnet.
 
     - http://40.90.163.184:3000
     - http://52.198.174.162:3000
+    - http://47.107.245.217:3000
 
 # Cloning from Github
 ```
