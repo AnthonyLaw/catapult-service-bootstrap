@@ -1,9 +1,18 @@
 #!/bin/bash
 
-build_param=$1
+build_flag=
+daemon_flag=
 
-if [ "$build_param" == "--build" ]; then
-  docker-compose -f cmds/docker/catapult-peers.yml up --build
-else
-  docker-compose -f cmds/docker/catapult-peers.yml up
-fi
+while [ "$1" != "" ]; do
+    case $1 in
+        -d | --daemon )         daemon_flag="-d"
+                                ;;
+        -b | --build )          build_flag="--build"
+                                ;;
+        * )                     usage
+                                exit 1
+    esac
+    shift
+done
+
+docker-compose -f cmds/docker/catapult-peers.yml up $daemon_flag $build_flag
