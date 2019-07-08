@@ -27,7 +27,7 @@
 
   "websocket": {
     "mq": {
-      "host": "api-node-0",
+      "host": "api-node-broker-0",
       "port": 7902,
       "monitorInterval": 500,
       "connectTimeout": 10000,
