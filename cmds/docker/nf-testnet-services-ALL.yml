@@ -27,7 +27,7 @@ services:
     - ../../build/state:/state
 
   rest-gateway:
-    image: techbureau/catapult-rest-server:1.0.16
+    image: techbureau/catapult-rest-server:1.0.17-temp-fix
     command: ash -c "npm start resources/rest.json /userconfig/rest.json"
     ports:
     - "3000:3000"
