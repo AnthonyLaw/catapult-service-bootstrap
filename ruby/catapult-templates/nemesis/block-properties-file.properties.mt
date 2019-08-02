@@ -35,7 +35,7 @@ duration = 0
 supply = 8'998'999'998'000'000
 isTransferable = true
 isSupplyMutable = false
-isLevyMutable = false
+isRestrictable = false
 
 [distribution>cat:currency]
 {{#cat_currency_distribution}}
