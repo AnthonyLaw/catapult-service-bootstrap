@@ -19,7 +19,7 @@ NODE_NAME=${6:-my-testnet-node}
 API_FRIENDLY_NAME=api-node-${NODE_NAME}
 PEER_FRIENDLY_NAME=peer-node-${NODE_NAME}
 
-# server paths 
+# server paths
 USERCONFIG=/userconfig
 NODE_CONFIG_PATH=userconfig/resources
 
@@ -120,7 +120,7 @@ config_peer_node() {
     ## 4) register neighboor api node
     ${SED_BIN} -i -e "s/host =.*/host = ${SERVER_IP}/" ${CONFIG_PATH}/peer-node-0/${NODE_CONFIG_PATH}/config-node.properties
     ${SED_BIN} -i -e "s/friendlyName =.*/friendlyName = ${PEER_FRIENDLY_NAME}/" ${CONFIG_PATH}/peer-node-0/${NODE_CONFIG_PATH}/config-node.properties
-    ${SED_BIN} -i -e "s/harvestKey =.*/harvestKey = ${PRIVKEY_HARVEST}/" ${CONFIG_PATH}/peer-node-0/${NODE_CONFIG_PATH}/config-harvesting.properties
+    ${SED_BIN} -i -e "s/harvesterPrivateKey =.*/harvesterPrivateKey = ${PRIVKEY_HARVEST}/" ${CONFIG_PATH}/peer-node-0/${NODE_CONFIG_PATH}/config-harvesting.properties
     ${SED_BIN} -i -e "s/bootPrivateKey =.*/bootPrivateKey = ${PRIVKEY_PEER_NODE}/" ${CONFIG_PATH}/peer-node-0/${NODE_CONFIG_PATH}/config-user.properties
 
     ${SED_BIN} -i -e "s/\"publicKey\": \"\"/\"publicKey\": \"${PUBKEY_PEER_NODE}\"/" ${CONFIG_PATH}/peer-node-0/${NODE_CONFIG_PATH}/peers-p2p.json
