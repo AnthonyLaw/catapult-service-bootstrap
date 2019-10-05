@@ -120,7 +120,7 @@ config_peer_node() {
     ## 4) register neighboor api node
     ${SED_BIN} -i -e "s/host =.*/host = ${SERVER_IP}/" ${CONFIG_PATH}/peer-node-0/${NODE_CONFIG_PATH}/config-node.properties
     ${SED_BIN} -i -e "s/friendlyName =.*/friendlyName = ${PEER_FRIENDLY_NAME}/" ${CONFIG_PATH}/peer-node-0/${NODE_CONFIG_PATH}/config-node.properties
-    ${SED_BIN} -i -e "s/harvestKey =.*/harvestKey = ${PRIVKEY_HARVEST}/" ${CONFIG_PATH}/peer-node-0/${NODE_CONFIG_PATH}/config-harvesting.properties
+    ${SED_BIN} -i -e "s/harvesterPrivateKey =.*/harvesterPrivateKey = ${PRIVKEY_HARVEST}/" ${CONFIG_PATH}/peer-node-0/${NODE_CONFIG_PATH}/config-harvesting.properties
     ${SED_BIN} -i -e "s/enableAutoHarvesting =.*/enableAutoHarvesting = true/" ${CONFIG_PATH}/peer-node-0/${NODE_CONFIG_PATH}/config-harvesting.properties
     ${SED_BIN} -i -e "s/bootPrivateKey =.*/bootPrivateKey = ${PRIVKEY_PEER_NODE}/" ${CONFIG_PATH}/peer-node-0/${NODE_CONFIG_PATH}/config-user.properties
 
