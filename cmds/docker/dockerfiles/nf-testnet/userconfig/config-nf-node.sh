@@ -14,7 +14,7 @@ STATE_PATH=${3:-/state}
 GENERATE_KEY=${4:-true}
 
 # Server Config
-SERVER_IP=${5:-1.2.3.4}
+SERVER_IP=${5:-127.0.0.1}
 NODE_NAME=${6:-my-testnet-node}
 API_FRIENDLY_NAME=api-node-${NODE_NAME}
 PEER_FRIENDLY_NAME=peer-node-${NODE_NAME}
