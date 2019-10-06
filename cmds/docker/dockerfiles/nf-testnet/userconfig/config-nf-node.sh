@@ -71,7 +71,7 @@ fi
 # do we need to generate keys ?
 if [ $GENERATE_KEY = 'true' ] ; then
     # generate 4 new addresses for the node
-    /catapult/bin/catapult.tools.address --generate=4 -n mijin-test > ${ADDRESSES_PATH}/raw-testnet.txt
+    /catapult/bin/catapult.tools.address --generate=4 -n public-test > ${ADDRESSES_PATH}/raw-testnet.txt
 
     # read private keys
     PRIVKEY_API_NODE=$(read_account_details "private key:" 1)
@@ -86,10 +86,10 @@ if [ $GENERATE_KEY = 'true' ] ; then
     PUBKEY_REST=$(read_account_details "public key:" 4)
 
     # read address
-    ADDRESS_API_NODE=$(read_account_details "address (mijin-test):" 1)
-    ADDRESS_PEER_NODE=$(read_account_details "address (mijin-test):" 2)
-    ADDRESS_HARVEST=$(read_account_details "address (mijin-test):" 3)
-    ADDRESS_REST=$(read_account_details "address (mijin-test):" 4)
+    ADDRESS_API_NODE=$(read_account_details "address (public-test):" 1)
+    ADDRESS_PEER_NODE=$(read_account_details "address (public-test):" 2)
+    ADDRESS_HARVEST=$(read_account_details "address (public-test):" 3)
+    ADDRESS_REST=$(read_account_details "address (public-test):" 4)
 
     # write testnet-node account details to /addresses/testnet.yaml
     $(write_config)
