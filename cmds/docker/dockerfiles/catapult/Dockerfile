@@ -1,2 +1,2 @@
-FROM  techbureau/catapult-server-private:gcc-master-ee077722b2
+FROM  kaiyzen/cat-server-private:latest
 ADD ./userconfig /userconfig
