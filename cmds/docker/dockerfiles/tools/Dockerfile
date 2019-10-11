@@ -1,1 +1,1 @@
-FROM kaiyzen/cat-tools-private:latest
+FROM techbureau/catapult-tools:gcc-0.8.0.3
