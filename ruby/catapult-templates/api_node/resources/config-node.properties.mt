@@ -2,12 +2,14 @@
 
 port = {{port}}
 apiPort = {{api_port}}
-shouldAllowAddressReuse = false
-shouldUseSingleThreadPool = false
-shouldUseCacheDatabaseStorage = {{should_use_cache_database_storage}}
-shouldEnableAutoSyncCleanup = false
+maxIncomingConnectionsPerIdentity = 3
 
-shouldEnableTransactionSpamThrottling = true
+enableAddressReuse = false
+enableSingleThreadPool = false
+enableCacheDatabaseStorage = {{enable_cache_database_storage}}
+enableAutoSyncCleanup = false
+
+enableTransactionSpamThrottling = true
 transactionSpamThrottlingMaxBoostFee = 10'000'000
 
 maxBlocksPerSyncAttempt = 400
@@ -35,14 +37,18 @@ blockElementTraceInterval = 1
 transactionDisruptorSize = 16384
 transactionElementTraceInterval = 10
 
-shouldAbortWhenDispatcherIsFull = true
-shouldAuditDispatcherInputs = true
+enableDispatcherAbortWhenFull = true
+enableDispatcherInputAuditing = true
 
 outgoingSecurityMode = None
 incomingSecurityModes = None
 
 maxCacheDatabaseWriteBatchSize = 5MB
 maxTrackedNodes = 5'000
+
+# all hosts are trusted when list is empty
+trustedHosts = 
+localNetworks = 127.0.0.1
 
 [localnode]
 
@@ -55,14 +61,25 @@ roles = Api
 [outgoing_connections]
 
 maxConnections = 10
-maxConnectionAge = 5
+maxConnectionAge = 200
 maxConnectionBanAge = 20
 numConsecutiveFailuresBeforeBanning = 3
 
 [incoming_connections]
 
 maxConnections = 512
-maxConnectionAge = 10
+maxConnectionAge = 200
 maxConnectionBanAge = 20
 numConsecutiveFailuresBeforeBanning = 3
 backlogSize = 512
+
+[banning]
+
+defaultBanDuration = 12h
+maxBanDuration = 72h
+keepAliveDuration = 48h
+maxBannedNodes = 5'000
+
+numReadRateMonitoringBuckets = 4
+readRateMonitoringBucketDuration = 15s
+maxReadRateMonitoringTotalSize = 100MB
