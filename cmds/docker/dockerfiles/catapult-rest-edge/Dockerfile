@@ -1,0 +1,1 @@
+FROM nemfoundation/catapult-rest-edge:1f2b3ed

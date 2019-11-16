@@ -19,7 +19,7 @@ NODE_NAME=${6:-my-testnet-node}
 API_FRIENDLY_NAME=api-node-${NODE_NAME}
 PEER_FRIENDLY_NAME=peer-node-${NODE_NAME}
 
-# server paths 
+# server paths
 USERCONFIG=/userconfig
 NODE_CONFIG_PATH=userconfig/resources
 
@@ -137,6 +137,13 @@ config_rest_gateway() {
     ${SED_BIN} -i -e "s/\"publicKey\": \"\"/\"publicKey\": \"${PUBKEY_API_NODE}\"/" ${CONFIG_PATH}/rest-gateway-0/userconfig/rest.json
 }
 
+config_rest_gateway_edge() {
+    ## 1) set harvestKey (clientPrivateKey)
+    ## 2) set NODE_IP if not local
+    ## 3) register neighboor api node
+    ${SED_BIN} -i -e "s/\"clientPrivateKey\": \"\"/\"clientPrivateKey\": \"${PRIVKEY_REST}\"/" ${CONFIG_PATH}/rest-gateway-edge/userconfig/rest.json
+    ${SED_BIN} -i -e "s/\"publicKey\": \"\"/\"publicKey\": \"${PUBKEY_API_NODE}\"/" ${CONFIG_PATH}/rest-gateway-edge/userconfig/rest.json
+}
 
 echo Now configuring api-node-0...
 echo Using Private Key: ${PRIVKEY_API_NODE}
@@ -158,6 +165,9 @@ echo
 
 # configure rest-gateway-0
 config_rest_gateway
+
+# configure rest-gateway-edge
+config_rest_gateway_edge
 
 # save config state
 touch ${STATE_PATH}/configs-edited
